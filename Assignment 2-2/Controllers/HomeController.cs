@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Assignment_2_2.Models.ActionFilter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,8 +10,11 @@ namespace Assignment_2_2.Controllers
 {
     public class HomeController : Controller
     {
+        [LogActionFilter]
         public ActionResult Index()
         {
+            Thread.Sleep(200);
+
             return View();
         }
 

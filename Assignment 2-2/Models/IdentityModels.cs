@@ -29,5 +29,7 @@ namespace Assignment_2_2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<ActionLogs> ActionLog { get; set; }
     }
 }
