@@ -1,4 +1,5 @@
-﻿using Assignment_2_2.Models.ActionFilter;
+﻿using Assignment_2_2.Helper;
+using Assignment_2_2.Models.ActionFilter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,19 @@ namespace Assignment_2_2.Controllers
 {
     public class HomeController : Controller
     {
-        [LogActionFilter]
-        public ActionResult Index()
+       
+        public ActionResult Age()
         {
-            Thread.Sleep(200);
-
+            var Date1 = new DateTime(1990, 01, 01).ToAge();
+            var Date2 = new DateTime(1987, 05, 07).ToAge();
+            var Date3 = new DateTime(1975, 10, 10).ToAge();
+            return View();
+        }
+        public ActionResult ToDigitsOnly()
+        {
+            var string1 = "abc123".ToDigitsOnly();
+            var string2 = "z1x2c3v4".ToDigitsOnly();
+            var string3 = "#$ss223%^".ToDigitsOnly();
             return View();
         }
 
